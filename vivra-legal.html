@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivra — Legal</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0D0D18;
+    --surface: #13131F;
+    --card: #1A1A2E;
+    --violet: #7C3AED;
+    --violet-lt: #A855F7;
+    --cyan: #0EA5E9;
+    --teal: #10B981;
+    --white: #FFFFFF;
+    --white80: rgba(255,255,255,0.8);
+    --white50: rgba(255,255,255,0.5);
+    --white20: rgba(255,255,255,0.2);
+    --white10: rgba(255,255,255,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* Background orbs */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(14,165,233,0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  header {
+    padding: 48px 0 40px;
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--violet), var(--cyan));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .logo-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--violet-lt), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  header h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--white50);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 6px;
+    margin-bottom: 40px;
+    border: 1px solid var(--white10);
+    gap: 4px;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: var(--white50);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .tab-btn.active {
+    background: linear-gradient(135deg, var(--violet), var(--cyan));
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .tab-btn:hover:not(.active) {
+    color: var(--white80);
+    background: var(--white10);
+  }
+
+  /* Content panels */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Last updated */
+  .last-updated {
+    font-size: 13px;
+    color: var(--white50);
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--white10);
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(180deg, var(--violet), var(--cyan));
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .section p {
+    color: var(--white80);
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+
+  .section ul, .section ol {
+    color: var(--white80);
+    padding-left: 20px;
+    font-size: 15px;
+  }
+
+  .section li {
+    margin-bottom: 8px;
+  }
+
+  /* Info cards */
+  .info-card {
+    background: var(--card);
+    border: 1px solid var(--white10);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .info-card.highlight {
+    border-color: rgba(124,58,237,0.3);
+    background: rgba(124,58,237,0.08);
+  }
+
+  .info-card.teal {
+    border-color: rgba(16,185,129,0.3);
+    background: rgba(16,185,129,0.08);
+  }
+
+  .info-card p {
+    color: var(--white80);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  /* Table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+
+  .data-table th {
+    background: var(--card);
+    color: var(--white50);
+    font-weight: 500;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--white10);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .data-table td {
+    padding: 12px 16px;
+    color: var(--white80);
+    border-bottom: 1px solid var(--white10);
+    vertical-align: top;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+
+  /* Tag */
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(16,185,129,0.15);
+    color: var(--teal);
+    border: 1px solid rgba(16,185,129,0.3);
+  }
+
+  .tag.purple {
+    background: rgba(124,58,237,0.15);
+    color: var(--violet-lt);
+    border-color: rgba(124,58,237,0.3);
+  }
+
+  /* Contact */
+  .contact-box {
+    background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(14,165,233,0.1));
+    border: 1px solid var(--white20);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .contact-box h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .contact-box p {
+    color: var(--white50);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .contact-box a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--violet), var(--cyan));
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: opacity 0.2s;
+  }
+
+  .contact-box a:hover { opacity: 0.85; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 32px 0 0;
+    color: var(--white50);
+    font-size: 13px;
+    border-top: 1px solid var(--white10);
+    margin-top: 48px;
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--white10);
+    margin: 32px 0;
+  }
+
+  a { color: var(--cyan); }
+
+  @media (max-width: 600px) {
+    .tab-btn { font-size: 12px; padding: 10px 8px; }
+    .section-title { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <a href="https://vivraapp.app" class="logo">
+      <div class="logo-icon">✦</div>
+      <span class="logo-text">Vivra</span>
+    </a>
+    <h1>Legal Information</h1>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('privacy')">Privacy Policy</button>
+    <button class="tab-btn" onclick="showTab('cookies')">Cookie Policy</button>
+    <button class="tab-btn" onclick="showTab('terms')">Terms & Conditions</button>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div id="privacy" class="tab-panel active">
+    <p class="last-updated">Last updated: May 4, 2026 · Effective date: May 4, 2026</p>
+
+    <div class="section">
+      <h2 class="section-title">Introduction</h2>
+      <p>Vivra ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the Vivra mobile application.</p>
+      <p>We operate in full compliance with the EU General Data Protection Regulation (GDPR) and Romanian data protection law. By using Vivra, you agree to the practices described in this policy.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Data We Collect</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>What We Collect</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Profile Data</strong></td>
+            <td>Name, profile photo (optional)</td>
+            <td>Personalise your experience</td>
+          </tr>
+          <tr>
+            <td><strong>Health & Habit Data</strong></td>
+            <td>Habits, streaks, fitness activity, notes, mood logs</td>
+            <td>Core app functionality</td>
+          </tr>
+          <tr>
+            <td><strong>Device Data</strong></td>
+            <td>Device type, OS version, app version</td>
+            <td>Technical support, crash reporting</td>
+          </tr>
+          <tr>
+            <td><strong>Usage Data</strong></td>
+            <td>Features used, session duration</td>
+            <td>Improve the app experience</td>
+          </tr>
+          <tr>
+            <td><strong>Advertising Data</strong></td>
+            <td>Ad interaction data (free users only)</td>
+            <td>Serve relevant ads via Google AdMob</td>
+          </tr>
+          <tr>
+            <td><strong>Payment Data</strong></td>
+            <td>Subscription status (no card details stored by us)</td>
+            <td>Manage premium access</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">How We Use Your Data</h2>
+      <ul>
+        <li>Provide and maintain the Vivra app and its features</li>
+        <li>Personalise your habit tracking and fitness experience</li>
+        <li>Process your subscription payments via Google Play Billing</li>
+        <li>Display advertisements to free-tier users via Google AdMob</li>
+        <li>Send important service notifications and updates</li>
+        <li>Analyse usage patterns to improve the app</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Data Storage</h2>
+      <div class="info-card teal">
+        <p>🔒 <strong>Your health and habit data stays on your device by default.</strong> It is only uploaded to our secure cloud servers if you explicitly enable Cloud Backup in your settings.</p>
+      </div>
+      <p>All cloud data is encrypted in transit (TLS) and at rest. We use industry-standard security measures to protect your information.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Third-Party Services</h2>
+      <p>Vivra uses the following third-party services that may process your data:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Provider</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AdMob</td>
+            <td>Google LLC</td>
+            <td>Advertising (free users)</td>
+          </tr>
+          <tr>
+            <td>Google Play Billing</td>
+            <td>Google LLC</td>
+            <td>Subscription payments</td>
+          </tr>
+          <tr>
+            <td>Firebase (if enabled)</td>
+            <td>Google LLC</td>
+            <td>Cloud backup, crash analytics</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>These services have their own privacy policies. We encourage you to review them.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Your Rights (GDPR)</h2>
+      <p>As an EU/EEA resident, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Right of Access</strong> — Request a copy of your personal data</li>
+        <li><strong>Right to Rectification</strong> — Correct inaccurate data</li>
+        <li><strong>Right to Erasure</strong> — Request deletion of your data</li>
+        <li><strong>Right to Restrict Processing</strong> — Limit how we use your data</li>
+        <li><strong>Right to Data Portability</strong> — Receive your data in a portable format</li>
+        <li><strong>Right to Object</strong> — Object to processing based on legitimate interests</li>
+        <li><strong>Right to Withdraw Consent</strong> — Withdraw consent at any time</li>
+      </ul>
+      <div class="info-card highlight">
+        <p>To exercise any of these rights, contact us at <a href="mailto:support@vivraapp.app">support@vivraapp.app</a>. We will respond within 30 days.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Data Retention</h2>
+      <p>We retain your personal data only as long as necessary to provide our services. If you delete your account, your data will be permanently deleted within 30 days. Aggregated, anonymised analytics data may be retained longer.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Children's Privacy</h2>
+      <p>Vivra is not intended for children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe we have inadvertently collected such data, please contact us immediately at <a href="mailto:support@vivraapp.app">support@vivraapp.app</a>.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Data We Never Sell</h2>
+      <div class="info-card teal">
+        <p>✅ <strong>We will never sell your personal data to third parties.</strong> Your information is used solely to provide and improve the Vivra service.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through the app or by email. Continued use of Vivra after changes constitutes acceptance of the updated policy.</p>
+    </div>
+  </div>
+
+  <!-- COOKIE POLICY -->
+  <div id="cookies" class="tab-panel">
+    <p class="last-updated">Last updated: May 4, 2026 · Effective date: May 4, 2026</p>
+
+    <div class="section">
+      <h2 class="section-title">About Cookies & Tracking</h2>
+      <p>Vivra is a mobile application. Unlike websites, mobile apps do not use traditional browser cookies. However, we and our third-party partners use similar tracking technologies — including mobile advertising identifiers, local storage, and SDKs — to provide and improve our services.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Tracking Technologies We Use</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Technology</th>
+            <th>Type</th>
+            <th>Purpose</th>
+            <th>Can Opt Out?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Local Storage</td>
+            <td><span class="tag">Essential</span></td>
+            <td>Store your habits, settings, and preferences on your device</td>
+            <td>No — required for app to function</td>
+          </tr>
+          <tr>
+            <td>Google AdMob SDK</td>
+            <td><span class="tag purple">Advertising</span></td>
+            <td>Serve personalised ads to free users</td>
+            <td>Yes — opt out in device settings</td>
+          </tr>
+          <tr>
+            <td>Advertising ID (GAID)</td>
+            <td><span class="tag purple">Advertising</span></td>
+            <td>Identify your device for ad personalisation</td>
+            <td>Yes — reset or opt out in device settings</td>
+          </tr>
+          <tr>
+            <td>Firebase Analytics</td>
+            <td><span class="tag">Analytics</span></td>
+            <td>Understand how users interact with the app</td>
+            <td>Yes — disable in app settings</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Essential Technologies</h2>
+      <p>These technologies are necessary for Vivra to function properly. Without them, the app cannot save your data, remember your preferences, or maintain your login session.</p>
+      <ul>
+        <li>Habit and streak data storage</li>
+        <li>Theme and language preferences</li>
+        <li>Premium subscription status</li>
+        <li>App configuration settings</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Advertising Technologies (Free Users)</h2>
+      <p>If you use the free version of Vivra, Google AdMob may collect and use your device's advertising identifier to display personalised advertisements. This helps keep Vivra free for users who choose not to subscribe.</p>
+      <div class="info-card highlight">
+        <p>💡 <strong>Premium subscribers</strong> do not see advertisements and are not subject to AdMob tracking within the app.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">How to Opt Out of Ad Personalisation</h2>
+      <p>You can opt out of personalised advertising at any time:</p>
+      <ul>
+        <li><strong>Android:</strong> Go to Settings → Google → Ads → Opt out of Ads Personalisation</li>
+        <li><strong>Or:</strong> Upgrade to Vivra Premium to remove all ads entirely</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Your Consent</h2>
+      <p>When you first open Vivra, we ask for your consent to use non-essential tracking technologies. You can withdraw your consent at any time through the app's Privacy Settings or by contacting us at <a href="mailto:support@vivraapp.app">support@vivraapp.app</a>.</p>
+    </div>
+  </div>
+
+  <!-- TERMS & CONDITIONS -->
+  <div id="terms" class="tab-panel">
+    <p class="last-updated">Last updated: May 4, 2026 · Effective date: May 4, 2026</p>
+
+    <div class="section">
+      <h2 class="section-title">Agreement to Terms</h2>
+      <p>By downloading, installing, or using Vivra ("the App"), you agree to be bound by these Terms and Conditions. If you do not agree, please do not use the App.</p>
+      <p>These Terms constitute a legally binding agreement between you and Vivra App (the developer), a sole trader based in Romania.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Eligibility</h2>
+      <ul>
+        <li>You must be at least <strong>13 years of age</strong> to use Vivra</li>
+        <li>If you are under 18, you must have parental or guardian consent</li>
+        <li>By using the App, you represent that you meet these age requirements</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Subscriptions & Payments</h2>
+      <p>Vivra offers the following premium plans:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Billing</th>
+            <th>Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Free</strong></td>
+            <td>Free forever</td>
+            <td>Core features with advertisements</td>
+          </tr>
+          <tr>
+            <td><strong>Premium Monthly</strong></td>
+            <td>Monthly recurring</td>
+            <td>All features, no ads, cloud backup</td>
+          </tr>
+          <tr>
+            <td><strong>Premium Yearly</strong></td>
+            <td>Annual recurring (discounted)</td>
+            <td>All features, no ads, cloud backup</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>All payments are processed securely by <strong>Google Play Billing</strong></li>
+        <li>Subscriptions automatically renew unless cancelled at least 24 hours before the renewal date</li>
+        <li>You can manage or cancel your subscription in your Google Play account settings</li>
+        <li>No refunds are provided for partial subscription periods, except where required by law</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Free Tier & Advertisements</h2>
+      <p>Free users will see advertisements served by Google AdMob, including banner ads and interstitial ads (displayed after every 3 screen transitions). Upgrading to Premium removes all advertisements.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Medical Disclaimer</h2>
+      <div class="info-card highlight">
+        <p>⚠️ <strong>Vivra is not a medical application and does not provide medical advice.</strong> The fitness and health content within the app is for informational and motivational purposes only. Always consult a qualified healthcare professional before starting any fitness or wellness program.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Acceptable Use</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the App for any unlawful purpose</li>
+        <li>Attempt to reverse engineer, decompile, or hack the App</li>
+        <li>Share your account with others or create multiple accounts to circumvent restrictions</li>
+        <li>Use the App in any way that could damage, disable, or impair it</li>
+        <li>Upload offensive, harmful, or inappropriate content</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Intellectual Property</h2>
+      <p>All content within Vivra — including but not limited to the design, graphics, animations, fitness content, text, and code — is the exclusive property of Vivra App and is protected by copyright law. You may not reproduce, distribute, or create derivative works without our explicit written permission.</p>
+      <p>Your personal data (habits, notes, entries) remains your property. We claim no ownership over content you create within the App.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, Vivra App shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App, including but not limited to loss of data, personal injury, or health consequences resulting from following fitness content in the App.</p>
+      <p>Our total liability to you shall not exceed the amount you paid for the App in the 12 months preceding the claim.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Termination</h2>
+      <p>We reserve the right to suspend or terminate your access to Vivra at any time if you violate these Terms. You may stop using the App at any time and cancel your subscription through Google Play.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Governing Law</h2>
+      <p>These Terms are governed by the laws of <strong>Romania</strong> and the European Union. Any disputes shall be subject to the exclusive jurisdiction of the courts of Romania. EU consumers also benefit from the mandatory consumer protection provisions of their country of residence.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Changes to Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of material changes through the App. Continued use of Vivra after changes constitutes your acceptance of the revised Terms.</p>
+    </div>
+  </div>
+
+  <!-- Contact Box -->
+  <div class="contact-box">
+    <h3>Questions or Concerns?</h3>
+    <p>Our support team is here to help with any privacy or legal questions.</p>
+    <a href="mailto:support@vivraapp.app">Contact Support</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Vivra App. All rights reserved.</p>
+    <p style="margin-top: 8px;">Vivra V1.0.0 · Romania · <a href="https://vivraapp.app">vivraapp.app</a></p>
+  </footer>
+
+</div>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
