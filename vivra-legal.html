@@ -347,12 +347,12 @@
   <div class="tabs">
     <button class="tab-btn active" onclick="showTab('privacy')">Privacy Policy</button>
     <button class="tab-btn" onclick="showTab('cookies')">Cookie Policy</button>
-    <button class="tab-btn" onclick="showTab('terms')">Terms & Conditions</button>
+    <button class="tab-btn" onclick="showTab('terms')">Terms &amp; Conditions</button>
   </div>
 
   <!-- PRIVACY POLICY -->
   <div id="privacy" class="tab-panel active">
-    <p class="last-updated">Last updated: May 4, 2026 · Effective date: May 4, 2026</p>
+    <p class="last-updated">Last updated: June 6, 2026 · Effective date: June 6, 2026</p>
 
     <div class="section">
       <h2 class="section-title">Introduction</h2>
@@ -377,9 +377,14 @@
             <td>Personalise your experience</td>
           </tr>
           <tr>
-            <td><strong>Health & Habit Data</strong></td>
-            <td>Habits, streaks, fitness activity, notes, mood logs</td>
+            <td><strong>Habit Data</strong></td>
+            <td>Habits, streaks, schedules, notes, mood logs</td>
             <td>Core app functionality</td>
+          </tr>
+          <tr>
+            <td><strong>Health &amp; Fitness Data</strong></td>
+            <td>Step count, physical activity / motion type (walking, running, cycling, driving), distance, calories burned, and heart rate (where available)</td>
+            <td>Show your daily fitness stats and progress</td>
           </tr>
           <tr>
             <td><strong>Device Data</strong></td>
@@ -406,13 +411,54 @@
     </div>
 
     <div class="section">
+      <h2 class="section-title">Health &amp; Fitness Data</h2>
+      <div class="info-card teal">
+        <p>🔒 <strong>Your health and fitness data is processed and stored entirely on your device.</strong> It is never transmitted to our servers unless you are a Premium subscriber and you explicitly turn on Cloud Backup.</p>
+      </div>
+      <p>To power the fitness features, Vivra accesses the following on your device, only with your permission:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Source / Permission</th>
+            <th>Used For</th>
+            <th>Leaves Device?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Step Counter sensor</strong></td>
+            <td>Counting your daily steps</td>
+            <td><span class="tag">No</span></td>
+          </tr>
+          <tr>
+            <td><strong>Physical Activity (Activity Recognition)</strong></td>
+            <td>Automatically detecting whether you are walking, running, cycling, or driving</td>
+            <td><span class="tag">No</span></td>
+          </tr>
+          <tr>
+            <td><strong>Health Connect (where available)</strong></td>
+            <td>Reading heart rate, active calories, and distance</td>
+            <td><span class="tag">No</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Distance and calories are estimated on your device from your step count and the weight you enter. You can revoke the Physical Activity or Health Connect permissions at any time in your device settings; the fitness features will simply stop updating. We do <strong>not</strong> use this data for advertising and we do <strong>not</strong> share it with third parties.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Notifications</h2>
+      <p>With your permission, Vivra sends local reminders (for example, daily habit reminders and streak alerts) that you schedule yourself. These notifications are generated on your device. You can turn them off at any time in the app or in your device settings.</p>
+    </div>
+
+    <div class="section">
       <h2 class="section-title">How We Use Your Data</h2>
       <ul>
         <li>Provide and maintain the Vivra app and its features</li>
         <li>Personalise your habit tracking and fitness experience</li>
+        <li>Display your fitness stats (steps, distance, calories, activity, heart rate) on your device</li>
+        <li>Send local reminders and streak alerts that you schedule</li>
         <li>Process your subscription payments via Google Play Billing</li>
         <li>Display advertisements to free-tier users via Google AdMob</li>
-        <li>Send important service notifications and updates</li>
         <li>Analyse usage patterns to improve the app</li>
         <li>Comply with legal obligations</li>
       </ul>
@@ -421,7 +467,7 @@
     <div class="section">
       <h2 class="section-title">Data Storage</h2>
       <div class="info-card teal">
-        <p>🔒 <strong>Your health and habit data stays on your device by default.</strong> It is only uploaded to our secure cloud servers if you explicitly enable Cloud Backup in your settings.</p>
+        <p>🔒 <strong>Your habit, mood, and health &amp; fitness data stays on your device by default.</strong> It is only uploaded to our secure cloud servers if you are a Premium subscriber and you explicitly enable Cloud Backup in your settings.</p>
       </div>
       <p>All cloud data is encrypted in transit (TLS) and at rest. We use industry-standard security measures to protect your information.</p>
     </div>
@@ -447,6 +493,11 @@
             <td>Google Play Billing</td>
             <td>Google LLC</td>
             <td>Subscription payments</td>
+          </tr>
+          <tr>
+            <td>Health Connect</td>
+            <td>Google LLC / Android</td>
+            <td>On-device access to heart rate, calories, distance</td>
           </tr>
           <tr>
             <td>Firebase (if enabled)</td>
@@ -500,10 +551,10 @@
 
   <!-- COOKIE POLICY -->
   <div id="cookies" class="tab-panel">
-    <p class="last-updated">Last updated: May 4, 2026 · Effective date: May 4, 2026</p>
+    <p class="last-updated">Last updated: June 6, 2026 · Effective date: June 6, 2026</p>
 
     <div class="section">
-      <h2 class="section-title">About Cookies & Tracking</h2>
+      <h2 class="section-title">About Cookies &amp; Tracking</h2>
       <p>Vivra is a mobile application. Unlike websites, mobile apps do not use traditional browser cookies. However, we and our third-party partners use similar tracking technologies — including mobile advertising identifiers, local storage, and SDKs — to provide and improve our services.</p>
     </div>
 
@@ -522,7 +573,7 @@
           <tr>
             <td>Local Storage</td>
             <td><span class="tag">Essential</span></td>
-            <td>Store your habits, settings, and preferences on your device</td>
+            <td>Store your habits, fitness data, settings, and preferences on your device</td>
             <td>No — required for app to function</td>
           </tr>
           <tr>
@@ -551,7 +602,7 @@
       <h2 class="section-title">Essential Technologies</h2>
       <p>These technologies are necessary for Vivra to function properly. Without them, the app cannot save your data, remember your preferences, or maintain your login session.</p>
       <ul>
-        <li>Habit and streak data storage</li>
+        <li>Habit, streak, and fitness data storage</li>
         <li>Theme and language preferences</li>
         <li>Premium subscription status</li>
         <li>App configuration settings</li>
@@ -583,7 +634,7 @@
 
   <!-- TERMS & CONDITIONS -->
   <div id="terms" class="tab-panel">
-    <p class="last-updated">Last updated: May 4, 2026 · Effective date: May 4, 2026</p>
+    <p class="last-updated">Last updated: June 6, 2026 · Effective date: June 6, 2026</p>
 
     <div class="section">
       <h2 class="section-title">Agreement to Terms</h2>
@@ -601,7 +652,7 @@
     </div>
 
     <div class="section">
-      <h2 class="section-title">Subscriptions & Payments</h2>
+      <h2 class="section-title">Subscriptions &amp; Payments</h2>
       <p>Vivra offers the following premium plans:</p>
       <table class="data-table">
         <thead>
@@ -638,14 +689,14 @@
     </div>
 
     <div class="section">
-      <h2 class="section-title">Free Tier & Advertisements</h2>
+      <h2 class="section-title">Free Tier &amp; Advertisements</h2>
       <p>Free users will see advertisements served by Google AdMob, including banner ads and interstitial ads (displayed after every 3 screen transitions). Upgrading to Premium removes all advertisements.</p>
     </div>
 
     <div class="section">
       <h2 class="section-title">Medical Disclaimer</h2>
       <div class="info-card highlight">
-        <p>⚠️ <strong>Vivra is not a medical application and does not provide medical advice.</strong> The fitness and health content within the app is for informational and motivational purposes only. Always consult a qualified healthcare professional before starting any fitness or wellness program.</p>
+        <p>⚠️ <strong>Vivra is not a medical application and does not provide medical advice.</strong> The fitness and health content within the app — including step counts, calorie and distance estimates, heart rate readings, and activity detection — is for informational and motivational purposes only and may not be fully accurate. Always consult a qualified healthcare professional before starting any fitness or wellness program.</p>
       </div>
     </div>
 
