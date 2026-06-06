@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vivra</title>
-<meta name="description" content="Vivra is the premium habit tracking and fitness app. Build streaks, track workouts, and transform your daily routine. Available on Android.">
+<meta name="description" content="Vivra is the premium habit tracking and fitness app. Build streaks, track workouts, count steps, and transform your daily routine. Available on Android.">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -24,11 +24,14 @@
   --white: #FFFFFF;
   --w90: rgba(255,255,255,0.9);
   --w70: rgba(255,255,255,0.7);
+  --w60: rgba(255,255,255,0.6);
   --w50: rgba(255,255,255,0.5);
+  --w40: rgba(255,255,255,0.4);
   --w30: rgba(255,255,255,0.3);
   --w15: rgba(255,255,255,0.15);
   --w08: rgba(255,255,255,0.08);
   --w04: rgba(255,255,255,0.04);
+  --w80: rgba(255,255,255,0.8);
   --grad: linear-gradient(135deg, var(--violet), var(--cyan));
   --grad2: linear-gradient(135deg, var(--violet-lt), var(--teal));
 }
@@ -363,7 +366,7 @@ section { position: relative; z-index: 1; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .phone-logo {
@@ -390,8 +393,8 @@ section { position: relative; z-index: 1; }
 .phone-streak {
   background: var(--card2);
   border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
   border: 1px solid var(--w08);
 }
 
@@ -405,7 +408,7 @@ section { position: relative; z-index: 1; }
 
 .streak-number {
   font-family: 'Sora', sans-serif;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 800;
   background: var(--grad);
   -webkit-background-clip: text;
@@ -420,6 +423,45 @@ section { position: relative; z-index: 1; }
   margin-top: 4px;
 }
 
+/* steps card in mockup */
+.phone-steps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card2);
+  border-radius: 16px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border: 1px solid var(--w08);
+}
+
+.phone-steps-ring {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: conic-gradient(var(--violet) 0% 18%, var(--w08) 18% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.phone-steps-ring span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--card2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-steps-info { flex: 1; }
+.phone-steps-num { font-family:'Sora',sans-serif; font-size: 18px; font-weight: 700; }
+.phone-steps-num small { font-size: 11px; color: var(--w50); font-weight: 400; }
+.phone-steps-sub { font-size: 11px; color: var(--w50); }
+
 .phone-habits {
   display: flex;
   flex-direction: column;
@@ -432,7 +474,7 @@ section { position: relative; z-index: 1; }
   gap: 10px;
   background: var(--card2);
   border-radius: 12px;
-  padding: 10px 12px;
+  padding: 9px 12px;
   border: 1px solid var(--w08);
 }
 
@@ -1046,7 +1088,7 @@ footer {
       Track Fitness.<br>
       <span class="gradient-text">Live Better.</span>
     </h1>
-    <p class="hero-sub">The all-in-one habit tracker and fitness companion. 22 exercises, 19 languages, 20 themes — beautifully designed for your daily life.</p>
+    <p class="hero-sub">The all-in-one habit tracker and fitness companion. Step tracking, 22 exercises, 20 languages, 20 themes — beautifully designed for your daily life.</p>
     <div class="hero-actions">
       <a href="#download" class="btn-primary">
         <span>▶</span> Download Free
@@ -1061,7 +1103,7 @@ footer {
         <div class="stat-label">Exercises</div>
       </div>
       <div class="stat">
-        <div class="stat-number">19</div>
+        <div class="stat-number">20</div>
         <div class="stat-label">Languages</div>
       </div>
       <div class="stat">
@@ -1092,6 +1134,13 @@ footer {
           <div class="streak-number">47</div>
           <div class="streak-sub">days — keep it up!</div>
         </div>
+        <div class="phone-steps">
+          <div class="phone-steps-ring"><span>👟</span></div>
+          <div class="phone-steps-info">
+            <div class="phone-steps-num">1,842 <small>/ 10,000 steps</small></div>
+            <div class="phone-steps-sub">🚶 Walking · 78 kcal</div>
+          </div>
+        </div>
         <div class="phone-habits">
           <div class="habit-item">
             <div class="habit-check done">✓</div>
@@ -1114,13 +1163,6 @@ footer {
               <div class="habit-streak">⏳ Pending</div>
             </div>
           </div>
-          <div class="habit-item">
-            <div class="habit-check pending"></div>
-            <div class="habit-info">
-              <div class="habit-name">Meditate</div>
-              <div class="habit-streak">⏳ Pending</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1139,6 +1181,21 @@ footer {
       <div class="feature-icon" style="background:rgba(124,58,237,0.15)">🔥</div>
       <h3>Habit Streaks & Calendar</h3>
       <p>Track your daily habits with beautiful streak counters and a full calendar view. Never lose momentum.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon" style="background:rgba(14,165,233,0.15)">👟</div>
+      <h3>Step & Activity Tracking</h3>
+      <p>Automatic step counting with live distance and calorie estimates. Vivra detects whether you're walking, running, cycling, or driving — no buttons to press.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon" style="background:rgba(16,185,129,0.15)">❤️</div>
+      <h3>Daily Health Dashboard</h3>
+      <p>See today's steps, calories, distance, heart rate, and streak at a glance. Your fitness data stays private — right on your device.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon" style="background:rgba(245,158,11,0.15)">⏰</div>
+      <h3>Smart Reminders</h3>
+      <p>Set individual reminders for each habit and never miss a day. Get gentle streak alerts that keep your momentum going.</p>
     </div>
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(14,165,233,0.15)">💪</div>
@@ -1223,14 +1280,14 @@ footer {
   <div class="fade-in">
     <div class="section-label">Global Reach</div>
     <h2 class="section-title">Speak Your Language</h2>
-    <p class="section-sub" style="margin:0 auto 0;color:var(--w50)">Vivra is available in 19 languages so everyone can build better habits, wherever they are.</p>
+    <p class="section-sub" style="margin:0 auto 0;color:var(--w50)">Vivra is available in 20 languages so everyone can build better habits, wherever they are.</p>
   </div>
   <div class="lang-grid fade-in">
     <span class="lang-pill">🇬🇧 English</span>
     <span class="lang-pill">🇪🇸 Spanish</span>
     <span class="lang-pill">🇫🇷 French</span>
     <span class="lang-pill">🇩🇪 German</span>
-    <span class="lang-pill">🇵🇹 Portuguese</span>
+    <span class="lang-pill">🇧🇷 Portuguese</span>
     <span class="lang-pill">🇸🇦 Arabic</span>
     <span class="lang-pill">🇮🇳 Hindi</span>
     <span class="lang-pill">🇨🇳 Chinese</span>
@@ -1270,10 +1327,10 @@ footer {
         <ul class="plan-features">
           <li><span class="check">✓</span> Unlimited habits</li>
           <li><span class="check">✓</span> Streak tracking & calendar</li>
+          <li><span class="check">✓</span> Step & activity tracking</li>
           <li><span class="check">✓</span> Milestone badges</li>
           <li><span class="check">✓</span> Mood tracking</li>
-          <li><span class="check">✓</span> Notes & target notes</li>
-          <li><span class="cross">✗</span> <span style="color:var(--w30)">19 languages</span></li>
+          <li><span class="cross">✗</span> <span style="color:var(--w30)">19 additional languages</span></li>
           <li><span class="cross">✗</span> <span style="color:var(--w30)">Full fitness suite</span></li>
           <li><span class="cross">✗</span> <span style="color:var(--w30)">20 themes</span></li>
           <li><span class="cross">✗</span> <span style="color:var(--w30)">Cloud backup</span></li>
@@ -1294,7 +1351,7 @@ footer {
         <hr class="plan-divider">
         <ul class="plan-features">
           <li><span class="check">✓</span> Everything in Free</li>
-          <li><span class="check">✓</span> 19 languages</li>
+          <li><span class="check">✓</span> All 20 languages</li>
           <li><span class="check">✓</span> Full fitness suite (22 exercises)</li>
           <li><span class="check">✓</span> 20 stunning themes</li>
           <li><span class="check">✓</span> Individual habit reminders</li>
@@ -1317,7 +1374,7 @@ footer {
         <hr class="plan-divider">
         <ul class="plan-features">
           <li><span class="check">✓</span> Everything in Free</li>
-          <li><span class="check">✓</span> 19 languages</li>
+          <li><span class="check">✓</span> All 20 languages</li>
           <li><span class="check">✓</span> Full fitness suite (22 exercises)</li>
           <li><span class="check">✓</span> 20 stunning themes</li>
           <li><span class="check">✓</span> Individual habit reminders</li>
