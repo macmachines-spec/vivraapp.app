@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vivra</title>
-<meta name="description" content="Vivra is the premium habit tracking and fitness app. Build streaks, track workouts, count steps, and transform your daily routine. Available on Android.">
+<meta name="description" content="Vivra is the premium habit tracking and fitness app, now with private chat and voice calling. Build streaks, track workouts, count steps, and stay connected with the people who keep you going. Available on Android.">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -48,7 +48,7 @@ body {
   line-height: 1.6;
 }
 
-/* ── NOISE TEXTURE ── */
+/* NOISE TEXTURE */
 body::before {
   content: '';
   position: fixed;
@@ -59,7 +59,7 @@ body::before {
   opacity: 0.4;
 }
 
-/* ── GRID OVERLAY ── */
+/* GRID OVERLAY */
 body::after {
   content: '';
   position: fixed;
@@ -71,7 +71,7 @@ body::after {
   z-index: 0;
 }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: fixed;
   top: 0;
@@ -147,10 +147,10 @@ nav {
 
 .nav-cta:hover { opacity: 0.85; }
 
-/* ── SECTIONS ── */
+/* SECTIONS */
 section { position: relative; z-index: 1; }
 
-/* ── HERO ── */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -231,7 +231,7 @@ section { position: relative; z-index: 1; }
 .hero-sub {
   font-size: clamp(16px, 2.5vw, 20px);
   color: var(--w70);
-  max-width: 560px;
+  max-width: 600px;
   margin: 0 auto 40px;
   font-weight: 300;
   animation: fadeUp 0.8s ease 0.2s both;
@@ -294,9 +294,7 @@ section { position: relative; z-index: 1; }
   animation: fadeUp 0.8s ease 0.4s both;
 }
 
-.stat {
-  text-align: center;
-}
+.stat { text-align: center; }
 
 .stat-number {
   font-family: 'Sora', sans-serif;
@@ -314,11 +312,59 @@ section { position: relative; z-index: 1; }
   margin-top: 2px;
 }
 
-/* ── PHONE MOCKUP ── */
+/* WHAT IS NEW STRIP */
+.whats-new {
+  padding: 0 24px 90px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.whats-new-inner {
+  background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(14,165,233,0.08));
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: 24px;
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.whats-new-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--grad);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.whats-new-text { flex: 1; min-width: 260px; }
+
+.whats-new-text h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.whats-new-text p {
+  color: var(--w60);
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* PHONE MOCKUP */
 .phone-mockup-section {
   padding: 40px 24px 100px;
   display: flex;
   justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
   position: relative;
   z-index: 1;
 }
@@ -333,6 +379,10 @@ section { position: relative; z-index: 1; }
   inset: -40px;
   background: radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 70%);
   pointer-events: none;
+}
+
+.phone-glow.cyan {
+  background: radial-gradient(circle, rgba(14,165,233,0.22) 0%, transparent 70%);
 }
 
 .phone-frame {
@@ -423,7 +473,6 @@ section { position: relative; z-index: 1; }
   margin-top: 4px;
 }
 
-/* steps card in mockup */
 .phone-steps {
   display: flex;
   align-items: center;
@@ -496,7 +545,127 @@ section { position: relative; z-index: 1; }
 .habit-name { font-size: 13px; font-weight: 500; }
 .habit-streak { font-size: 11px; color: var(--w50); }
 
-/* ── FEATURES ── */
+/* CHAT MOCKUP */
+.chat-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--w08);
+}
+
+.chat-top-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--grad2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.chat-top-name { font-size: 14px; font-weight: 600; line-height: 1.2; }
+.chat-top-status { font-size: 11px; color: var(--teal); }
+.chat-top-icons { margin-left: auto; font-size: 15px; color: var(--w50); letter-spacing: 6px; }
+
+.chat-day {
+  text-align: center;
+  margin: 4px 0 12px;
+}
+
+.chat-day span {
+  display: inline-block;
+  padding: 3px 12px;
+  background: var(--card2);
+  border: 1px solid var(--w08);
+  border-radius: 20px;
+  font-size: 10px;
+  color: var(--w50);
+  font-weight: 600;
+}
+
+.chat-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bubble-row { display: flex; flex-direction: column; }
+.bubble-row.me { align-items: flex-end; }
+.bubble-row.them { align-items: flex-start; }
+
+.bubble {
+  max-width: 78%;
+  padding: 9px 13px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  border-radius: 15px;
+}
+
+.bubble-row.me .bubble {
+  background: var(--grad);
+  border-bottom-right-radius: 4px;
+}
+
+.bubble-row.them .bubble {
+  background: var(--card2);
+  border: 1px solid var(--w08);
+  border-bottom-left-radius: 4px;
+}
+
+.bubble-meta {
+  font-size: 9.5px;
+  color: var(--w30);
+  margin-top: 4px;
+  padding: 0 4px;
+}
+
+.bubble-meta .ticks { color: var(--cyan); }
+
+.bubble.call {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--w08);
+}
+
+.chat-input-icon { font-size: 14px; color: var(--w40); }
+
+.chat-input-field {
+  flex: 1;
+  background: var(--card2);
+  border: 1px solid var(--w08);
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 11.5px;
+  color: var(--w30);
+}
+
+.chat-input-send {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* FEATURES */
 .features {
   padding: 100px 24px;
   max-width: 1200px;
@@ -525,7 +694,7 @@ section { position: relative; z-index: 1; }
   color: var(--w60);
   font-size: 17px;
   font-weight: 300;
-  max-width: 520px;
+  max-width: 560px;
   margin-bottom: 64px;
 }
 
@@ -565,6 +734,23 @@ section { position: relative; z-index: 1; }
 
 .feature-card:hover::before { opacity: 1; }
 
+.feature-card.spotlight {
+  background: linear-gradient(180deg, rgba(124,58,237,0.1) 0%, var(--card) 100%);
+  border-color: rgba(124,58,237,0.28);
+}
+
+.feature-new {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 3px 10px;
+  background: var(--grad);
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
 .feature-icon {
   width: 48px;
   height: 48px;
@@ -589,10 +775,79 @@ section { position: relative; z-index: 1; }
   line-height: 1.6;
 }
 
-/* ── EXERCISES ── */
-.exercises {
+/* CONNECT SECTION */
+.connect {
   padding: 100px 24px;
   background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.connect::before {
+  content: '';
+  position: absolute;
+  top: -180px;
+  left: -180px;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.connect-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.connect-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.connect-list li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.connect-bullet {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: var(--violet-dim);
+  border: 1px solid rgba(124,58,237,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.connect-list h4 {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.connect-list p {
+  color: var(--w60);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.connect-visual { display: flex; justify-content: center; }
+
+/* EXERCISES */
+.exercises {
+  padding: 100px 24px;
   position: relative;
   overflow: hidden;
 }
@@ -637,10 +892,7 @@ section { position: relative; z-index: 1; }
   transform: translateX(4px);
 }
 
-.exercise-emoji {
-  font-size: 20px;
-  flex-shrink: 0;
-}
+.exercise-emoji { font-size: 20px; flex-shrink: 0; }
 
 .exercise-name {
   font-size: 13px;
@@ -648,7 +900,7 @@ section { position: relative; z-index: 1; }
   color: var(--w90);
 }
 
-/* ── LANGUAGES ── */
+/* LANGUAGES */
 .languages {
   padding: 100px 24px;
   max-width: 1200px;
@@ -683,7 +935,7 @@ section { position: relative; z-index: 1; }
   color: var(--white);
 }
 
-/* ── PRICING ── */
+/* PRICING */
 .pricing {
   padding: 100px 24px;
   background: var(--surface);
@@ -754,9 +1006,7 @@ section { position: relative; z-index: 1; }
   margin-bottom: 16px;
 }
 
-.plan-price {
-  margin-bottom: 8px;
-}
+.plan-price { margin-bottom: 8px; }
 
 .plan-price .amount {
   font-family: 'Sora', sans-serif;
@@ -852,7 +1102,7 @@ section { position: relative; z-index: 1; }
   transform: translateY(-2px);
 }
 
-/* ── TESTIMONIALS ── */
+/* TESTIMONIALS */
 .social-proof {
   padding: 80px 24px;
   max-width: 1000px;
@@ -878,7 +1128,7 @@ section { position: relative; z-index: 1; }
   font-style: italic;
 }
 
-/* ── CTA ── */
+/* CTA */
 .cta-section {
   padding: 100px 24px;
   text-align: center;
@@ -942,7 +1192,7 @@ section { position: relative; z-index: 1; }
 
 .store-badge-icon { font-size: 24px; }
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer {
   background: var(--surface);
   border-top: 1px solid var(--w08);
@@ -1012,10 +1262,7 @@ footer {
   font-size: 13px;
 }
 
-.footer-bottom-links {
-  display: flex;
-  gap: 24px;
-}
+.footer-bottom-links { display: flex; gap: 24px; }
 
 .footer-bottom-links a {
   color: var(--w40);
@@ -1026,7 +1273,7 @@ footer {
 
 .footer-bottom-links a:hover { color: var(--white); }
 
-/* ── ANIMATIONS ── */
+/* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1043,12 +1290,17 @@ footer {
   transform: translateY(0);
 }
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .connect-inner { grid-template-columns: 1fr; gap: 48px; }
+}
+
 @media (max-width: 768px) {
   nav { padding: 16px 20px; }
   .nav-links { display: none; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .hero-stats { gap: 28px; }
+  .whats-new-inner { padding: 28px 24px; gap: 20px; }
 }
 
 @media (max-width: 480px) {
@@ -1067,6 +1319,7 @@ footer {
   </a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
+    <li><a href="#connect">Chat &amp; Calls</a></li>
     <li><a href="#exercises">Fitness</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="vivra-legal.html">Legal</a></li>
@@ -1081,14 +1334,14 @@ footer {
   <div>
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      Now Available on Google Play
+      New: Private chat and voice calling
     </div>
     <h1>
       Build Habits.<br>
-      Track Fitness.<br>
+      Stay Connected.<br>
       <span class="gradient-text">Live Better.</span>
     </h1>
-    <p class="hero-sub">The all-in-one habit tracker and fitness companion. Step tracking, 22 exercises, 20 languages, 20 themes — beautifully designed for your daily life.</p>
+    <p class="hero-sub">The all in one habit tracker and fitness companion, now with private chat and crystal clear voice calls. Track your streaks, move your body, and talk to the people who keep you going.</p>
     <div class="hero-actions">
       <a href="#download" class="btn-primary">
         <span>▶</span> Download Free
@@ -1111,6 +1364,10 @@ footer {
         <div class="stat-label">Themes</div>
       </div>
       <div class="stat">
+        <div class="stat-number">HD</div>
+        <div class="stat-label">Voice Calls</div>
+      </div>
+      <div class="stat">
         <div class="stat-number">∞</div>
         <div class="stat-label">Habits</div>
       </div>
@@ -1118,8 +1375,21 @@ footer {
   </div>
 </section>
 
-<!-- PHONE MOCKUP -->
+<!-- WHAT IS NEW -->
+<section class="whats-new">
+  <div class="whats-new-inner fade-in">
+    <span class="whats-new-tag">JUST LANDED</span>
+    <div class="whats-new-text">
+      <h3>Vivra is no longer a solo app</h3>
+      <p>Add a friend with a simple code, then message them, share photos, videos, voice notes and files, and call them with real HD audio. Habits are easier to keep when someone else is in it with you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHONE MOCKUPS -->
 <div class="phone-mockup-section">
+
+  <!-- Habits phone -->
   <div class="phone-wrap">
     <div class="phone-glow"></div>
     <div class="phone-frame">
@@ -1132,7 +1402,7 @@ footer {
         <div class="phone-streak">
           <div class="streak-label">🔥 Current Streak</div>
           <div class="streak-number">47</div>
-          <div class="streak-sub">days — keep it up!</div>
+          <div class="streak-sub">days, keep it up!</div>
         </div>
         <div class="phone-steps">
           <div class="phone-steps-ring"><span>👟</span></div>
@@ -1167,6 +1437,50 @@ footer {
       </div>
     </div>
   </div>
+
+  <!-- Chat phone -->
+  <div class="phone-wrap">
+    <div class="phone-glow cyan"></div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="chat-top">
+          <div class="chat-top-avatar">🌻</div>
+          <div>
+            <div class="chat-top-name">Amara</div>
+            <div class="chat-top-status">Online</div>
+          </div>
+          <div class="chat-top-icons">📞⋮</div>
+        </div>
+        <div class="chat-day"><span>TODAY</span></div>
+        <div class="chat-stream">
+          <div class="bubble-row them">
+            <div class="bubble">Day 30 of the water streak 💧</div>
+            <div class="bubble-meta">08:14</div>
+          </div>
+          <div class="bubble-row me">
+            <div class="bubble">That is huge. I am on 12 and struggling</div>
+            <div class="bubble-meta">08:16 <span class="ticks">✓✓</span></div>
+          </div>
+          <div class="bubble-row them">
+            <div class="bubble call">📞 Voice call 04:22</div>
+            <div class="bubble-meta">08:31</div>
+          </div>
+          <div class="bubble-row me">
+            <div class="bubble">Sending you the plan now 📄</div>
+            <div class="bubble-meta">08:44 <span class="ticks">✓✓</span></div>
+          </div>
+        </div>
+        <div class="chat-input">
+          <span class="chat-input-icon">📎</span>
+          <span class="chat-input-icon">🙂</span>
+          <div class="chat-input-field">Type a message...</div>
+          <div class="chat-input-send">🎤</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- FEATURES -->
@@ -1174,68 +1488,172 @@ footer {
   <div class="fade-in">
     <div class="section-label">Everything You Need</div>
     <h2 class="section-title">Designed for real life,<br>built to last.</h2>
-    <p class="section-sub">Every feature in Vivra is crafted to help you build habits that stick and a fitness routine that lasts.</p>
+    <p class="section-sub">Every feature in Vivra is crafted to help you build habits that stick, a fitness routine that lasts, and a way to stay close to the people who matter.</p>
   </div>
   <div class="features-grid">
+
+    <div class="feature-card spotlight fade-in">
+      <span class="feature-new">NEW</span>
+      <div class="feature-icon" style="background:rgba(124,58,237,0.15)">💬</div>
+      <h3>Private Chat</h3>
+      <p>Message your friends one to one. Send photos, videos, voice notes, audio files and documents. Reply to any message, search your history, and select several at once to copy or delete.</p>
+    </div>
+
+    <div class="feature-card spotlight fade-in">
+      <span class="feature-new">NEW</span>
+      <div class="feature-icon" style="background:rgba(14,165,233,0.15)">📞</div>
+      <h3>HD Voice Calling</h3>
+      <p>Call any friend with clear, low latency audio. Incoming calls ring on your lock screen like a normal phone call, with mute and speaker controls built in.</p>
+    </div>
+
+    <div class="feature-card spotlight fade-in">
+      <span class="feature-new">NEW</span>
+      <div class="feature-icon" style="background:rgba(16,185,129,0.15)">🤝</div>
+      <h3>Friend Codes</h3>
+      <p>No phone numbers, no contact list uploads. Share a short private code and connect only with the people you choose. Block or remove anyone at any time.</p>
+    </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(124,58,237,0.15)">🔥</div>
-      <h3>Habit Streaks & Calendar</h3>
+      <h3>Habit Streaks &amp; Calendar</h3>
       <p>Track your daily habits with beautiful streak counters and a full calendar view. Never lose momentum.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(14,165,233,0.15)">👟</div>
-      <h3>Step & Activity Tracking</h3>
-      <p>Automatic step counting with live distance and calorie estimates. Vivra detects whether you're walking, running, cycling, or driving — no buttons to press.</p>
+      <h3>Step &amp; Activity Tracking</h3>
+      <p>Automatic step counting with live distance and calorie estimates. Vivra detects whether you are walking, running, cycling, or driving, with no buttons to press.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(16,185,129,0.15)">❤️</div>
       <h3>Daily Health Dashboard</h3>
-      <p>See today's steps, calories, distance, heart rate, and streak at a glance. Your fitness data stays private — right on your device.</p>
+      <p>See today's steps, calories, distance, heart rate, and streak at a glance. Your fitness data stays private, right on your device.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(245,158,11,0.15)">⏰</div>
       <h3>Smart Reminders</h3>
       <p>Set individual reminders for each habit and never miss a day. Get gentle streak alerts that keep your momentum going.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(14,165,233,0.15)">💪</div>
       <h3>Full Fitness Suite</h3>
-      <p>22 exercises across strength, cardio, and flexibility — complete with real photos, instructions, sets, reps, and rest timers.</p>
+      <p>22 exercises across strength, cardio, and flexibility, complete with real photos, instructions, sets, reps, and rest timers.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(16,185,129,0.15)">🏆</div>
       <h3>Milestone Badges</h3>
-      <p>Earn achievement badges at 7, 30, and 100-day streaks. Celebrate your progress every step of the way.</p>
+      <p>Earn achievement badges at 7, 30, and 100 day streaks. Celebrate your progress every step of the way.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(245,158,11,0.15)">📅</div>
       <h3>Custom Habit Schedules</h3>
-      <p>Set habits for specific days of the week. Monday gym, Wednesday meditation — your schedule, your way.</p>
+      <p>Set habits for specific days of the week. Monday gym, Wednesday meditation, your schedule, your way.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(124,58,237,0.15)">📝</div>
-      <h3>Notes & Mood Tracking</h3>
+      <h3>Notes &amp; Mood Tracking</h3>
       <p>Add improvement notes and target notes to each habit. Track your mood daily and see your patterns over time.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(14,165,233,0.15)">🎵</div>
-      <h3>Workout Music & Sounds</h3>
-      <p>Built-in workout music and motivational sound effects to keep you energised through every session.</p>
+      <h3>Workout Music &amp; Sounds</h3>
+      <p>Built in workout music and motivational sound effects to keep you energised through every session.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(16,185,129,0.15)">☁️</div>
       <h3>Cloud Backup</h3>
       <p>Never lose your progress. Enable cloud backup to keep your data safe and synced across devices.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(245,158,11,0.15)">🎨</div>
       <h3>20 Stunning Themes</h3>
       <p>Personalise Vivra with 20 beautiful dark themes. Make the app truly yours.</p>
     </div>
+
     <div class="feature-card fade-in">
       <div class="feature-icon" style="background:rgba(124,58,237,0.15)">📊</div>
       <h3>Advanced Analytics</h3>
       <p>Detailed reports and analytics on your habit completion rates, streaks, and fitness progress over time.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect" id="connect">
+  <div class="connect-inner">
+    <div class="fade-in">
+      <div class="section-label">Chat &amp; Calls</div>
+      <h2 class="section-title">Habits stick better<br>with someone beside you.</h2>
+      <p class="section-sub" style="margin-bottom:0;color:var(--w50)">Vivra now has a full messaging and calling layer, built for accountability rather than endless scrolling. No feeds, no strangers, no noise.</p>
+      <ul class="connect-list">
+        <li>
+          <div class="connect-bullet">🔑</div>
+          <div>
+            <h4>Connect by code, not phone number</h4>
+            <p>Your contact list is never uploaded. You share a short friend code with the people you actually want to hear from.</p>
+          </div>
+        </li>
+        <li>
+          <div class="connect-bullet">📎</div>
+          <div>
+            <h4>Share almost anything</h4>
+            <p>Photos, videos, voice notes, audio files and documents. Pick several at once, and everything appears instantly while it uploads in the background.</p>
+          </div>
+        </li>
+        <li>
+          <div class="connect-bullet">📶</div>
+          <div>
+            <h4>Calls that behave like calls</h4>
+            <p>Incoming calls take over the screen and ring properly, even when the phone is locked and Vivra is closed.</p>
+          </div>
+        </li>
+        <li>
+          <div class="connect-bullet">🛡️</div>
+          <div>
+            <h4>You stay in control</h4>
+            <p>Block or report anyone, remove a friend in a tap, and delete your own messages for both sides.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="connect-visual fade-in">
+      <div class="phone-wrap">
+        <div class="phone-glow"></div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px">
+            <div style="width:92px;height:92px;border-radius:50%;background:var(--grad2);display:flex;align-items:center;justify-content:center;font-size:40px;box-shadow:0 0 60px rgba(124,58,237,0.5)">🌻</div>
+            <div>
+              <div style="font-family:'Sora',sans-serif;font-size:21px;font-weight:700">Amara</div>
+              <div style="font-size:13px;color:var(--w50);margin-top:2px">Ringing...</div>
+            </div>
+            <div style="display:flex;gap:14px;margin-top:10px">
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--card2);border:1px solid var(--w08);display:flex;align-items:center;justify-content:center;font-size:17px">🔇</div>
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--card2);border:1px solid var(--w08);display:flex;align-items:center;justify-content:center;font-size:17px">🔊</div>
+            </div>
+            <div style="display:flex;gap:26px;margin-top:26px">
+              <div style="text-align:center">
+                <div style="width:56px;height:56px;border-radius:50%;background:#EF4444;display:flex;align-items:center;justify-content:center;font-size:22px">📵</div>
+                <div style="font-size:11px;color:var(--w50);margin-top:7px">Decline</div>
+              </div>
+              <div style="text-align:center">
+                <div style="width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:22px">📞</div>
+                <div style="font-size:11px;color:var(--w50);margin-top:7px">Accept</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1246,7 +1664,7 @@ footer {
     <div class="fade-in">
       <div class="section-label">Fitness Suite</div>
       <h2 class="section-title">22 Exercises.<br>Zero Excuses.</h2>
-      <p class="section-sub" style="color:var(--w50)">From strength to cardio to flexibility — every workout you need, right in your pocket with photo guides and instructions.</p>
+      <p class="section-sub" style="color:var(--w50)">From strength to cardio to flexibility, every workout you need, right in your pocket with photo guides and instructions.</p>
     </div>
     <div class="exercises-grid fade-in">
       <div class="exercise-card"><span class="exercise-emoji">💪</span><span class="exercise-name">Push-up</span></div>
@@ -1312,7 +1730,7 @@ footer {
     <div class="fade-in">
       <div class="section-label">Simple Pricing</div>
       <h2 class="section-title">Start Free.<br>Unlock Everything.</h2>
-      <p class="section-sub" style="margin:0 auto;color:var(--w50)">No hidden fees. Cancel anytime. Your data is always yours.</p>
+      <p class="section-sub" style="margin:0 auto;color:var(--w50)">No hidden fees. Cancel anytime. Chat and calling are free for everyone.</p>
     </div>
     <div class="pricing-grid fade-in">
 
@@ -1326,15 +1744,16 @@ footer {
         <hr class="plan-divider">
         <ul class="plan-features">
           <li><span class="check">✓</span> Unlimited habits</li>
-          <li><span class="check">✓</span> Streak tracking & calendar</li>
-          <li><span class="check">✓</span> Step & activity tracking</li>
+          <li><span class="check">✓</span> Private chat &amp; voice calling</li>
+          <li><span class="check">✓</span> Photos, videos, voice notes &amp; files</li>
+          <li><span class="check">✓</span> Streak tracking &amp; calendar</li>
+          <li><span class="check">✓</span> Step &amp; activity tracking</li>
           <li><span class="check">✓</span> Milestone badges</li>
           <li><span class="check">✓</span> Mood tracking</li>
           <li><span class="cross">✗</span> <span style="color:var(--w30)">19 additional languages</span></li>
           <li><span class="cross">✗</span> <span style="color:var(--w30)">Full fitness suite</span></li>
           <li><span class="cross">✗</span> <span style="color:var(--w30)">20 themes</span></li>
           <li><span class="cross">✗</span> <span style="color:var(--w30)">Cloud backup</span></li>
-          <li><span class="cross">✗</span> <span style="color:var(--w30)">Ad-free experience</span></li>
         </ul>
         <a href="#download" class="plan-btn free">Download Free</a>
       </div>
@@ -1355,9 +1774,8 @@ footer {
           <li><span class="check">✓</span> Full fitness suite (22 exercises)</li>
           <li><span class="check">✓</span> 20 stunning themes</li>
           <li><span class="check">✓</span> Individual habit reminders</li>
-          <li><span class="check">✓</span> Advanced analytics & reports</li>
+          <li><span class="check">✓</span> Advanced analytics &amp; reports</li>
           <li><span class="check">✓</span> Cloud backup</li>
-          <li><span class="check">✓</span> Ad-free experience</li>
           <li><span class="check">✓</span> 24h priority support</li>
         </ul>
         <a href="#download" class="plan-btn premium">Get Premium</a>
@@ -1370,7 +1788,7 @@ footer {
           <span class="amount">$39.99</span>
           <span class="period">/year</span>
         </div>
-        <div class="plan-savings">✨ Save 33% — just $3.33/month</div>
+        <div class="plan-savings">✨ Save 33%, just $3.33/month</div>
         <hr class="plan-divider">
         <ul class="plan-features">
           <li><span class="check">✓</span> Everything in Free</li>
@@ -1378,9 +1796,8 @@ footer {
           <li><span class="check">✓</span> Full fitness suite (22 exercises)</li>
           <li><span class="check">✓</span> 20 stunning themes</li>
           <li><span class="check">✓</span> Individual habit reminders</li>
-          <li><span class="check">✓</span> Advanced analytics & reports</li>
+          <li><span class="check">✓</span> Advanced analytics &amp; reports</li>
           <li><span class="check">✓</span> Cloud backup</li>
-          <li><span class="check">✓</span> Ad-free experience</li>
           <li><span class="check">✓</span> 24h priority support</li>
         </ul>
         <a href="#download" class="plan-btn premium">Get Best Value</a>
@@ -1414,12 +1831,13 @@ footer {
           <div class="nav-logo-icon">V</div>
           <span class="nav-logo-text">Vivra</span>
         </a>
-        <p>Build habits. Track fitness. Live better — every single day.</p>
+        <p>Build habits. Track fitness. Stay connected. Live better, every single day.</p>
       </div>
       <div class="footer-col">
         <h4>App</h4>
         <ul>
           <li><a href="#features">Features</a></li>
+          <li><a href="#connect">Chat &amp; Calls</a></li>
           <li><a href="#exercises">Fitness Suite</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#download">Download</a></li>
@@ -1429,7 +1847,7 @@ footer {
         <h4>Legal</h4>
         <ul>
           <li><a href="vivra-legal.html">Privacy Policy</a></li>
-          <li><a href="vivra-legal.html">Terms & Conditions</a></li>
+          <li><a href="vivra-legal.html">Terms &amp; Conditions</a></li>
           <li><a href="vivra-legal.html">Cookie Policy</a></li>
         </ul>
       </div>
@@ -1438,12 +1856,13 @@ footer {
         <ul>
           <li><a href="mailto:support@vivraapp.app">Contact Us</a></li>
           <li><a href="mailto:support@vivraapp.app">Report a Bug</a></li>
+          <li><a href="mailto:support@vivraapp.app">Report Abuse</a></li>
           <li><a href="mailto:support@vivraapp.app">Feature Request</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Vivra App. All rights reserved. Built with ❤️ in Romania.</p>
+      <p>© 2026 Vivra App. All rights reserved. Built with care in Romania.</p>
       <div class="footer-bottom-links">
         <a href="vivra-legal.html">Privacy</a>
         <a href="vivra-legal.html">Terms</a>
