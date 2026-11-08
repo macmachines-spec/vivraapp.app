@@ -3,362 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/favicon.png">
 <title>Vivra Legal</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<meta name="description" content="Vivra Privacy Policy, Cookie Policy and Terms and Conditions.">
+<meta name="theme-color" content="#FFFBF2">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0D0D18;
-    --surface: #13131F;
-    --card: #1A1A2E;
-    --violet: #7C3AED;
-    --violet-lt: #A855F7;
-    --cyan: #0EA5E9;
-    --teal: #10B981;
-    --amber: #F59E0B;
-    --red: #EF4444;
-    --white: #FFFFFF;
-    --white80: rgba(255,255,255,0.8);
-    --white50: rgba(255,255,255,0.5);
-    --white20: rgba(255,255,255,0.2);
-    --white10: rgba(255,255,255,0.1);
-  }
+/* Sunlit white, violet accent. Same system as the main site. */
+:root{
+  --white:#FFFFFF; --cream:#FFFBF2; --sun-soft:#FFF3CF; --sun:#FFC83D; --sun-deep:#F2A900;
+  --violet:#7C3AED; --violet-deep:#5B21B6; --violet-soft:#F1EAFE; --cyan:#0EA5E9; --teal:#10B981; --teal-soft:#E3F7EF;
+  --ink:#1A1030; --ink2:#4B4463; --ink3:#7A7391; --line:#EBE3D0; --line2:#E4DDF0;
+  --grad:linear-gradient(135deg,#7C3AED,#0EA5E9);
+  --display:'Sora','Segoe UI',system-ui,sans-serif; --body:'DM Sans','Segoe UI',system-ui,sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--violet-deep);text-underline-offset:3px}a:hover{color:var(--violet)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,251,242,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:800 23px var(--display);letter-spacing:-.03em}
+.brand i{width:36px;height:36px;border-radius:11px;background:var(--grad);display:grid;place-items:center;color:#fff;font:800 19px var(--display);font-style:normal;box-shadow:0 6px 16px -4px rgba(124,58,237,.55)}
+.back{font-weight:700;font-size:14.5px;text-decoration:none;color:var(--ink);background:var(--white);border:1px solid var(--line2);padding:9px 18px;border-radius:12px}
+.back:hover{background:var(--violet-soft);color:var(--ink)}
 
-  body {
-    background: var(--bg);
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    min-height: 100vh;
-  }
+.hero{position:relative;padding:56px 0 36px;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-140px;top:-160px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,61,.5),rgba(255,200,61,.14) 48%,transparent 70%);pointer-events:none}
+.hero .wrap{position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:700 12.5px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--violet-deep)}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--sun-deep)}
+.hero h1{font:800 clamp(34px,5vw,52px)/1.1 var(--display);letter-spacing:-.025em;margin:14px 0 12px}
+.hero p{color:var(--ink2);max-width:600px;font-size:18px}
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: -200px;
-    left: -200px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  body::after {
-    content: '';
-    position: fixed;
-    bottom: -200px;
-    right: -200px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(14,165,233,0.1) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
+.tabbar{position:sticky;top:66px;z-index:50;background:rgba(255,251,242,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:12px 0;border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex:none;border:1.5px solid var(--line2);background:var(--white);color:var(--ink2);font:700 15px var(--body);padding:11px 22px;border-radius:99px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab-btn:hover{border-color:var(--violet);color:var(--violet-deep)}
+.tab-btn.active{background:var(--violet);border-color:var(--violet);color:#fff;box-shadow:0 10px 22px -10px rgba(124,58,237,.7)}
 
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 24px 80px;
-    position: relative;
-    z-index: 1;
-  }
+.layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;padding-top:40px;padding-bottom:24px;align-items:start}
+.toc{position:sticky;top:150px;max-height:calc(100vh - 180px);overflow:auto;padding-right:6px}
+.toc h4{font:700 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px}
+.toc ol{list-style:none;display:flex;flex-direction:column;border-left:2px solid var(--line)}
+.toc a{display:block;padding:7px 0 7px 16px;margin-left:-2px;border-left:2px solid transparent;font-size:14.5px;color:var(--ink2);text-decoration:none;line-height:1.35}
+.toc a:hover{color:var(--violet)}
+.toc a.on{color:var(--violet-deep);font-weight:700;border-left-color:var(--sun-deep)}
 
-  header {
-    padding: 48px 0 40px;
-    text-align: center;
-  }
+.tab-panel{display:none}.tab-panel.active{display:block}
+.last-updated{display:inline-block;font-size:13.5px;font-weight:500;color:var(--ink2);background:var(--sun-soft);padding:7px 14px;border-radius:99px;margin-bottom:30px}
+.section{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:32px 34px;margin-bottom:20px}
+.section-title{font:700 22px var(--display);letter-spacing:-.015em;margin-bottom:16px;color:var(--ink);display:flex;gap:12px;align-items:center}
+.section-title::before{content:"";width:5px;height:24px;border-radius:3px;background:linear-gradient(180deg,var(--sun-deep),var(--violet));flex:none}
+.section p{color:var(--ink2);margin-bottom:14px}
+.section p:last-child{margin-bottom:0}
+.section ul,.section ol{color:var(--ink2);padding-left:22px;margin-bottom:14px}
+.section li{margin-bottom:8px}
+.section li::marker{color:var(--sun-deep)}
+.section strong{color:var(--ink)}
+.info-card{border-radius:16px;padding:18px 22px;margin:20px 0;border:1px solid var(--line2);background:var(--violet-soft)}
+.info-card p{margin:0;color:var(--ink)}
+.info-card.highlight{background:var(--violet-soft);border-color:#DCCBFB}
+.info-card.teal{background:var(--teal-soft);border-color:#BDE9D6}
+.info-card.amber{background:var(--sun-soft);border-color:#F5DB92}
+.table-scroll{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:16px}
+.data-table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+.data-table th{background:#FAF6EA;color:var(--ink3);font:700 12px var(--body);text-transform:uppercase;letter-spacing:.08em;text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)}
+.data-table td{padding:14px 16px;color:var(--ink2);border-bottom:1px solid var(--line);vertical-align:top}
+.data-table tr:last-child td{border-bottom:0}
+.data-table td strong{color:var(--ink)}
+.tag{display:inline-block;padding:4px 12px;border-radius:99px;font-size:12.5px;font-weight:700;background:var(--teal-soft);color:#047857;white-space:nowrap}
+.tag.purple{background:var(--violet-soft);color:var(--violet-deep)}
+.tag.amber{background:var(--sun-soft);color:#946200}
 
-  .logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 32px;
-    text-decoration: none;
-  }
+.contact-box{margin:40px 0 0;background:linear-gradient(135deg,#5B21B6,#7C3AED 60%,#0EA5E9);border-radius:28px;padding:44px 28px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.contact-box::before{content:"";position:absolute;right:-60px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,61,.7),transparent 68%)}
+.contact-box>*{position:relative}
+.contact-box h3{font:800 26px var(--display);margin-bottom:8px}
+.contact-box p{opacity:.9;margin-bottom:20px}
+.contact-box a{display:inline-block;background:var(--sun);color:var(--ink);text-decoration:none;font-weight:700;padding:14px 30px;border-radius:14px}
+.contact-box a:hover{background:#FFD35E;color:var(--ink)}
+footer{margin-top:56px;background:var(--ink);color:rgba(255,255,255,.7);text-align:center;padding:36px 20px;font-size:14.5px}
+footer a{color:var(--sun);text-decoration:none}
 
-  .logo-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--violet), var(--cyan));
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-  }
-
-  .logo-text {
-    font-family: 'Sora', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--violet-lt), var(--cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  header h1 {
-    font-family: 'Sora', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--white50);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  .tabs {
-    display: flex;
-    background: var(--surface);
-    border-radius: 16px;
-    padding: 6px;
-    margin-bottom: 40px;
-    border: 1px solid var(--white10);
-    gap: 4px;
-  }
-
-  .tab-btn {
-    flex: 1;
-    padding: 12px 16px;
-    border: none;
-    background: transparent;
-    color: var(--white50);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
-
-  .tab-btn.active {
-    background: linear-gradient(135deg, var(--violet), var(--cyan));
-    color: var(--white);
-    font-weight: 600;
-  }
-
-  .tab-btn:hover:not(.active) {
-    color: var(--white80);
-    background: var(--white10);
-  }
-
-  .tab-panel { display: none; }
-  .tab-panel.active { display: block; }
-
-  .last-updated {
-    font-size: 13px;
-    color: var(--white50);
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--white10);
-  }
-
-  .section { margin-bottom: 40px; }
-
-  .section-title {
-    font-family: 'Sora', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .section-title::before {
-    content: '';
-    display: block;
-    width: 4px;
-    height: 20px;
-    background: linear-gradient(180deg, var(--violet), var(--cyan));
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
-
-  .section p {
-    color: var(--white80);
-    margin-bottom: 12px;
-    font-size: 15px;
-  }
-
-  .section ul, .section ol {
-    color: var(--white80);
-    padding-left: 20px;
-    font-size: 15px;
-  }
-
-  .section li { margin-bottom: 8px; }
-
-  .info-card {
-    background: var(--card);
-    border: 1px solid var(--white10);
-    border-radius: 14px;
-    padding: 20px 24px;
-    margin: 20px 0;
-  }
-
-  .info-card.highlight {
-    border-color: rgba(124,58,237,0.3);
-    background: rgba(124,58,237,0.08);
-  }
-
-  .info-card.teal {
-    border-color: rgba(16,185,129,0.3);
-    background: rgba(16,185,129,0.08);
-  }
-
-  .info-card.amber {
-    border-color: rgba(245,158,11,0.35);
-    background: rgba(245,158,11,0.08);
-  }
-
-  .info-card p {
-    color: var(--white80);
-    font-size: 15px;
-    margin: 0;
-  }
-
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 14px;
-  }
-
-  .data-table th {
-    background: var(--card);
-    color: var(--white50);
-    font-weight: 500;
-    text-align: left;
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--white10);
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .data-table td {
-    padding: 12px 16px;
-    color: var(--white80);
-    border-bottom: 1px solid var(--white10);
-    vertical-align: top;
-  }
-
-  .data-table tr:last-child td { border-bottom: none; }
-
-  .table-scroll { overflow-x: auto; }
-
-  .tag {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    background: rgba(16,185,129,0.15);
-    color: var(--teal);
-    border: 1px solid rgba(16,185,129,0.3);
-  }
-
-  .tag.purple {
-    background: rgba(124,58,237,0.15);
-    color: var(--violet-lt);
-    border-color: rgba(124,58,237,0.3);
-  }
-
-  .tag.amber {
-    background: rgba(245,158,11,0.15);
-    color: var(--amber);
-    border-color: rgba(245,158,11,0.3);
-  }
-
-  .contact-box {
-    background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(14,165,233,0.1));
-    border: 1px solid var(--white20);
-    border-radius: 16px;
-    padding: 28px;
-    text-align: center;
-    margin-top: 48px;
-  }
-
-  .contact-box h3 {
-    font-family: 'Sora', sans-serif;
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  .contact-box p {
-    color: var(--white50);
-    font-size: 14px;
-    margin-bottom: 16px;
-  }
-
-  .contact-box a {
-    display: inline-block;
-    padding: 12px 28px;
-    background: linear-gradient(135deg, var(--violet), var(--cyan));
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 15px;
-    transition: opacity 0.2s;
-  }
-
-  .contact-box a:hover { opacity: 0.85; }
-
-  footer {
-    text-align: center;
-    padding: 32px 0 0;
-    color: var(--white50);
-    font-size: 13px;
-    border-top: 1px solid var(--white10);
-    margin-top: 48px;
-  }
-
-  .divider {
-    border: none;
-    border-top: 1px solid var(--white10);
-    margin: 32px 0;
-  }
-
-  a { color: var(--cyan); }
-
-  @media (max-width: 600px) {
-    .tab-btn { font-size: 12px; padding: 10px 8px; }
-    .section-title { font-size: 16px; }
-  }
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:0}
+  .toc{display:none}
+  .section{padding:24px 20px;border-radius:20px}
+  .section-title{font-size:20px}
+}
+@media (max-width:520px){
+  .tab-btn{padding:10px 16px;font-size:14px}
+  .hero{padding:40px 0 28px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div class="container">
 
-  <header>
-    <a href="https://vivraapp.app" class="logo">
-      <div class="logo-icon">✦</div>
-      <span class="logo-text">Vivra</span>
-    </a>
-    <h1>Legal Information</h1>
-  </header>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Vivra home"><i>V</i>Vivra</a>
+  <a class="back" href="index.html">Back to Vivra</a>
+</div></nav>
 
-  <div class="tabs">
-    <button class="tab-btn active" onclick="showTab('privacy')">Privacy Policy</button>
-    <button class="tab-btn" onclick="showTab('cookies')">Cookie Policy</button>
-    <button class="tab-btn" onclick="showTab('terms')">Terms &amp; Conditions</button>
-  </div>
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">Legal information</span>
+  <h1>Your privacy, in plain words</h1>
+  <p>How Vivra handles your data, what the rules are, and what you can ask us to do. Pick a document below.</p>
+</div></header>
 
+<div class="tabbar"><div class="wrap"><div class="tabs" role="tablist">
+  <button class="tab-btn active" data-tab="privacy" role="tab" type="button">Privacy Policy</button>
+  <button class="tab-btn" data-tab="cookies" role="tab" type="button">Cookie Policy</button>
+  <button class="tab-btn" data-tab="terms" role="tab" type="button">Terms &amp; Conditions</button>
+</div></div></div>
+
+<main class="wrap layout">
+  <aside class="toc" aria-label="On this page"><h4>On this page</h4><ol id="toc"></ol></aside>
+  <div>
   <!-- PRIVACY POLICY -->
   <div id="privacy" class="tab-panel active">
-    <p class="last-updated">Last updated: September 13, 2026 · Effective date: September 13, 2026</p>
+    <p class="last-updated">Last updated: November 8, 2026 · Effective date: November 8, 2026</p>
 
     <div class="section">
       <h2 class="section-title">Introduction</h2>
       <p>Vivra ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the Vivra mobile application.</p>
       <p>We operate in full compliance with the EU General Data Protection Regulation (GDPR) and Romanian data protection law. By using Vivra, you agree to the practices described in this policy.</p>
       <div class="info-card highlight">
-        <p><strong>What changed in this version.</strong> Vivra now includes private one to one messaging and voice calling. This means that, for the first time, some of your content is stored on our servers rather than only on your device. The sections below explain exactly what that covers.</p>
+        <p><strong>What changed in this version.</strong> Vivra now includes groups, audio and video calls, group calls, Auras, Walk Together, optional sign-in, and Vivra Meet for people aged 18 and over. Chats, groups, Meet profiles and posts, and Auras are stored on our servers. Your habit and fitness data still stays on your device. The sections below explain exactly what is covered.</p>
       </div>
     </div>
 
@@ -381,7 +157,7 @@
           </tr>
           <tr>
             <td><strong>Account Identifier</strong></td>
-            <td>An anonymous account ID created by Firebase Authentication. We do not require an email address or phone number.</td>
+            <td>An account ID created by Firebase Authentication. If you choose to sign in with Google or an email link, your email address is linked to your account. We never require your phone number.</td>
             <td>Identify your account across chat and calling</td>
           </tr>
           <tr>
@@ -408,6 +184,21 @@
             <td><strong>Push Token</strong></td>
             <td>A device notification token from Firebase Cloud Messaging</td>
             <td>Deliver incoming message and call notifications</td>
+          </tr>
+          <tr>
+            <td><strong>Meet Profile &amp; Posts</strong></td>
+            <td>If you use Meet: display name, photo, backdrop, details you add, posts, comments, followers and following, and optional city</td>
+            <td>Let other Meet users find you, follow you and see what you share</td>
+          </tr>
+          <tr>
+            <td><strong>Auras</strong></td>
+            <td>Photos or short moments you post, who viewed them and who reacted</td>
+            <td>Show your Aura to your friends or your Meet circle until it expires</td>
+          </tr>
+          <tr>
+            <td><strong>Walk Together</strong></td>
+            <td>Your step count and distance during a walk with a friend. No GPS and no location</td>
+            <td>Show you and your friends each other's progress while you walk</td>
           </tr>
           <tr>
             <td><strong>Habit Data</strong></td>
@@ -479,7 +270,7 @@
             <td><span class="tag purple">Yes, until deleted</span></td>
           </tr>
           <tr>
-            <td><strong>Voice call audio</strong></td>
+            <td><strong>Call audio and video</strong></td>
             <td>LiveKit, streamed live between participants</td>
             <td><span class="tag">Never recorded or stored</span></td>
           </tr>
@@ -497,26 +288,62 @@
       </table>
       </div>
 
-      <p>Voice call audio is streamed live between you and the person you are speaking to and is never written to disk by us. Only the fact that a call happened, its time, and its duration are saved, so that both people can see it in their chat history.</p>
+      <p>Call audio and video are streamed live between the people on the call and are never recorded or written to disk by us. Only the fact that a call happened, its time, and its duration are saved, so that both people can see it in their chat history.</p>
       <p>Deleting a message removes it, and any attached file, for both you and the other person. Messages you have already sent may remain on the other person's device if they have saved or exported them, which is outside our control.</p>
       <p>Data for chat and calling is processed on servers located in the United States. Transfers out of the EEA are made under the European Commission's Standard Contractual Clauses.</p>
     </div>
 
     <div class="section">
       <h2 class="section-title">Who Can Contact You</h2>
-      <p>Vivra does not upload your phone contacts and does not use your phone number. You are found only through a short friend code that you choose to share, and a connection is only created once you accept a request.</p>
+      <p>Vivra does not upload your phone contacts and does not use your phone number. In chat, you are found only through a short Vivra code that you choose to share, and a connection is only created once you accept a request. If you create a Meet profile, other Meet users can discover that profile and follow you, but they never see your Vivra code.</p>
       <ul>
         <li>You can block any user, which prevents them from messaging or calling you</li>
         <li>You can remove a friend at any time, which removes the connection for both people</li>
-        <li>You can report a user for abuse directly from the chat screen</li>
+        <li>You can report a user for abuse directly from the chat screen or from Meet</li>
       </ul>
       <p>To limit unsolicited requests, Vivra restricts how many friend requests a single account can send in a short period.</p>
     </div>
 
     <div class="section">
+      <h2 class="section-title">Accounts &amp; Sign-in</h2>
+      <p>You start with an anonymous account. You can optionally sign in with Google or an email link. Signing in ties your friends, groups and chats to you instead of to one phone, so they come back if you reinstall Vivra or change phones. You need to sign in to use Vivra Meet. If you sign in, your email address is linked to your account and stored with Firebase Authentication.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Vivra Meet</h2>
+      <p>Vivra Meet is optional and only for people aged 18 and over. When you create a Meet profile, the following can be seen by other Meet users:</p>
+      <ul>
+        <li>Your display name, profile photo and backdrop (cover photo), and any details you choose to add</li>
+        <li>Your posts, reposts and comments</li>
+        <li>Who you follow and who follows you</li>
+        <li>Your Online status, which you can show or hide in Meet settings</li>
+        <li>Your city, only if you choose to show it. Never your exact location</li>
+      </ul>
+      <p>Your Vivra friend code is never shown in Meet. Meet content is stored in Google Cloud Firestore and Firebase Cloud Storage. You can report users and content, and block users.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Groups, Calls &amp; Auras</h2>
+      <ul>
+        <li><strong>Groups:</strong> members of a group can see its messages, files and member list.</li>
+        <li><strong>Video and group calls:</strong> call audio and video are streamed live through LiveKit between participants and are never recorded or stored. Only the fact that a call happened and its duration are saved.</li>
+        <li><strong>Auras:</strong> an Aura is a photo or short moment that is removed after the time you choose, 24 hours by default. Chat Auras are visible to your friends. Meet Auras are visible to your Meet circle (people you follow, people who follow you and Meet friends). You can see who viewed your Aura and who reacted.</li>
+      </ul>
+      <p>Other people can take screenshots of what you share, which is outside our control.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Walk Together</h2>
+      <div class="info-card teal">
+        <p>🚶 <strong>Walk Together does not use GPS and Vivra does not collect your location.</strong></p>
+      </div>
+      <p>During a Walk Together call, your step count and distance are shared live with the friends in the walk. Distance is estimated from your steps. When the walk ends, the summary stays on your device unless you choose to post it as an Aura or share it.</p>
+    </div>
+
+    <div class="section">
       <h2 class="section-title">Health &amp; Fitness Data</h2>
       <div class="info-card teal">
-        <p>🔒 <strong>Your health and fitness data is processed and stored entirely on your device.</strong> It is never transmitted to our servers unless you are a Premium subscriber and you explicitly turn on Cloud Backup. It is never shared with anyone you chat with.</p>
+        <p>🔒 <strong>Your health and fitness data is processed and stored entirely on your device.</strong> It is never transmitted to our servers unless you are a Premium subscriber and you explicitly turn on Cloud Backup. It is never shared with anyone you chat with. The one exception is Walk Together, where your live step count and distance are shared with the friends in that walk, and a walk summary you choose to post or share.</p>
       </div>
       <p>To power the fitness features, Vivra accesses the following on your device, only with your permission:</p>
       <div class="table-scroll">
@@ -562,8 +389,8 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Microphone</strong></td>
-            <td>Voice calls and recording voice notes. Never used in the background or without an active call or recording.</td>
+            <td><strong>Microphone and camera</strong></td>
+            <td>Audio and video calls and recording voice notes. Never used in the background or without an active call or recording.</td>
           </tr>
           <tr>
             <td><strong>Photos, videos and files</strong></td>
@@ -638,17 +465,17 @@
           <tr>
             <td>Firebase Authentication</td>
             <td>Google LLC</td>
-            <td>Creating your anonymous account identifier</td>
+            <td>Creating your account identifier and, if you choose, signing you in with Google or an email link</td>
           </tr>
           <tr>
             <td>Cloud Firestore</td>
             <td>Google LLC</td>
-            <td>Storing messages, friend lists and call records</td>
+            <td>Storing messages, friend lists, groups, Meet profiles and posts, Auras and call records</td>
           </tr>
           <tr>
             <td>Firebase Cloud Storage</td>
             <td>Google LLC</td>
-            <td>Storing photos, videos, audio and documents you send</td>
+            <td>Storing photos, videos, audio, documents and Meet media you send or post</td>
           </tr>
           <tr>
             <td>Firebase Cloud Messaging</td>
@@ -663,7 +490,7 @@
           <tr>
             <td>LiveKit</td>
             <td>LiveKit Inc.</td>
-            <td>Carrying live voice call audio between participants</td>
+            <td>Carrying live call audio and video between participants</td>
           </tr>
           <tr>
             <td>Cloudflare Workers</td>
@@ -703,7 +530,7 @@
         <li><strong>Right to Object</strong>, object to processing based on legitimate interests</li>
         <li><strong>Right to Withdraw Consent</strong>, withdraw consent at any time</li>
       </ul>
-      <p>One practical note about erasure in a conversation. A chat has two participants, and a message you sent also forms part of the other person's record of that conversation. You can delete your own messages at any time, which removes them for both sides. If you ask us to erase your account, we delete your profile, your friend connections, your call records and the messages and files you sent.</p>
+      <p>One practical note about erasure in a conversation. A chat has two participants, and a message you sent also forms part of the other person's record of that conversation. You can delete your own messages at any time, which removes them for both sides. If you ask us to erase your account, we delete your profile, your Meet page, posts and comments, your friend connections, your call records and the messages and files you sent.</p>
       <div class="info-card highlight">
         <p>To exercise any of these rights, contact us at <a href="mailto:support@vivraapp.app">support@vivraapp.app</a>. We will respond within 30 days.</p>
       </div>
@@ -717,6 +544,8 @@
         <li><strong>Call records</strong> are kept as part of your chat history and are removed with it</li>
         <li><strong>Presence data</strong> such as last seen is continuously overwritten and is not kept as a history</li>
         <li><strong>Abuse reports</strong> are kept for up to 12 months so that repeat behaviour can be recognised</li>
+        <li><strong>Auras</strong> are removed when they expire, 24 hours by default</li>
+        <li><strong>Meet profile, posts and comments</strong> are removed when you delete your account</li>
         <li><strong>Deleted accounts</strong> are permanently removed within 30 days</li>
       </ul>
       <p>Aggregated, anonymised analytics data may be retained longer.</p>
@@ -742,7 +571,7 @@
 
   <!-- COOKIE POLICY -->
   <div id="cookies" class="tab-panel">
-    <p class="last-updated">Last updated: September 13, 2026 · Effective date: September 13, 2026</p>
+    <p class="last-updated">Last updated: November 8, 2026 · Effective date: November 8, 2026</p>
 
     <div class="section">
       <h2 class="section-title">About Cookies &amp; Tracking</h2>
@@ -840,7 +669,7 @@
 
   <!-- TERMS & CONDITIONS -->
   <div id="terms" class="tab-panel">
-    <p class="last-updated">Last updated: September 13, 2026 · Effective date: September 13, 2026</p>
+    <p class="last-updated">Last updated: November 8, 2026 · Effective date: November 8, 2026</p>
 
     <div class="section">
       <h2 class="section-title">Agreement to Terms</h2>
@@ -851,7 +680,7 @@
     <div class="section">
       <h2 class="section-title">Eligibility</h2>
       <ul>
-        <li>You must be at least <strong>13 years of age</strong> to use Vivra</li>
+        <li>You must be at least <strong>13 years of age</strong> to use Vivra, and at least <strong>18</strong> to use Vivra Meet</li>
         <li>If you are under 18, you must have parental or guardian consent</li>
         <li>By using the App, you represent that you meet these age requirements</li>
       </ul>
@@ -859,11 +688,27 @@
 
     <div class="section">
       <h2 class="section-title">Chat, Calling &amp; Your Content</h2>
-      <p>Vivra lets you exchange messages, photos, videos, voice notes, audio files, documents and voice calls with people you have added as friends. Content you send is yours. We claim no ownership of it. You grant us only the limited permission needed to store it and deliver it to the person you sent it to.</p>
+      <p>Vivra lets you exchange messages, photos, videos, voice notes, audio files and documents, make audio and video calls, and create groups with group chat and group calls, with people you have connected with using a Vivra code. Content you send is yours. We claim no ownership of it. You grant us only the limited permission needed to store it and deliver it to the person you sent it to.</p>
       <p>You are responsible for what you send. You agree that you have the right to share any content you upload, and that it does not infringe anyone else's rights.</p>
       <div class="info-card amber">
         <p>⚠️ <strong>Vivra does not currently provide end to end encryption.</strong> Messages are encrypted in transit and at rest, but they are not encrypted in a way that prevents us from accessing them. Do not use Vivra for highly sensitive information.</p>
       </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Vivra Meet</h2>
+      <p>Vivra Meet is only for people aged 18 and over. You can create a profile with a photo and backdrop, post, follow people and connect with them. Your Vivra code is never shown in Meet. Anything you post or add to your Meet profile can be seen by other Meet users. You can show or hide your Online status in Meet settings. Meet is subject to the rules in these Terms, and accounts that break them can be removed.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Auras &amp; Walk Together</h2>
+      <p>An Aura is a photo or short moment that disappears after the time you choose, 24 hours by default. Chat Auras are seen by your friends and Meet Auras by your Meet circle. Other people can take screenshots, so only share what you are comfortable sharing.</p>
+      <p>Walk Together is a call with a friend where you see each other's steps and distance. It uses your phone's step counter. It does not use GPS and does not track where you are.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Your Account</h2>
+      <p>You start with an anonymous account. You can sign in with Google or an email link to keep your friends, groups and chats if you change phones, and you need to sign in to use Meet. You are responsible for what happens on your account. We may suspend or remove accounts that break these Terms, and a removed account cannot sign up again with the same email. You can delete your account in the app. Your Meet page, posts, comments, followers and discovery profile are then removed, and your chats stay for the other person, shown as "Deleted account".</p>
     </div>
 
     <div class="section">
@@ -888,10 +733,10 @@
       <p>Every conversation includes tools to protect yourself:</p>
       <ul>
         <li><strong>Block</strong> a user to stop them messaging or calling you</li>
-        <li><strong>Report</strong> a user directly from the chat screen</li>
+        <li><strong>Report</strong> a user directly from the chat screen or from Meet</li>
         <li><strong>Remove</strong> a friend to end the connection for both people</li>
       </ul>
-      <p>Reports are reviewed and we act on them as quickly as we can. Because conversations are private and one to one, we do not proactively monitor message content. We act on reports, on valid legal requests, and where we otherwise become aware of a serious violation. Where a report is upheld, we may warn, suspend or permanently ban the account involved.</p>
+      <p>Reports are reviewed and we act on them as quickly as we can. Because conversations are private, we do not proactively monitor message content. Meet is public to other Meet users, so we may review reported posts and profiles and remove content that breaks these Terms. We act on reports, on valid legal requests, and where we otherwise become aware of a serious violation. Where a report is upheld, we may warn, suspend or permanently ban the account involved.</p>
       <p>You can also report abuse by writing to <a href="mailto:support@vivraapp.app">support@vivraapp.app</a>.</p>
     </div>
 
@@ -916,7 +761,7 @@
           <tr>
             <td><strong>Free</strong></td>
             <td>Free forever</td>
-            <td>Core habit tracking, chat and voice calling</td>
+            <td>Core habit tracking, chat, audio and video calls, groups, Meet, Auras and Walk Together</td>
           </tr>
           <tr>
             <td><strong>Premium Monthly</strong></td>
@@ -987,27 +832,60 @@
     </div>
   </div>
 
-  <!-- Contact Box -->
-  <div class="contact-box">
-    <h3>Questions or Concerns?</h3>
-    <p>Our support team is here to help with any privacy, safety or legal questions.</p>
-    <a href="mailto:support@vivraapp.app">Contact Support</a>
+
+    <div class="contact-box">
+      <h3>Questions or concerns?</h3>
+      <p>Our support team is here to help with any privacy, safety or legal question.</p>
+      <a href="mailto:support@vivraapp.app">Contact support</a>
+    </div>
   </div>
+</main>
 
-  <footer>
-    <p>© 2026 Vivra App. All rights reserved.</p>
-    <p style="margin-top: 8px;">Romania · <a href="https://vivraapp.app">vivraapp.app</a></p>
-  </footer>
-
-</div>
+<footer>
+  <p>&copy; 2026 Vivra App. All rights reserved.</p>
+  <p style="margin-top:6px">Romania &middot; <a href="index.html">vivraapp.app</a></p>
+</footer>
 
 <script>
-  function showTab(tabId) {
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
-    event.target.classList.add('active');
+(function(){
+  var tabs=['privacy','cookies','terms'];
+  var toc=document.getElementById('toc');
+  function build(id){
+    var panel=document.getElementById(id); toc.innerHTML='';
+    panel.querySelectorAll('.section').forEach(function(s,i){
+      var t=s.querySelector('.section-title'); if(!t) return;
+      if(!s.id) s.id=id+'-'+(i+1);
+      var li=document.createElement('li'), a=document.createElement('a');
+      a.href='#'+s.id; a.textContent=t.textContent; a.addEventListener('click',function(e){
+        e.preventDefault(); s.scrollIntoView({behavior:'smooth',block:'start'}); history.replaceState(null,'','#'+s.id);
+      });
+      li.appendChild(a); toc.appendChild(li);
+    });
+    spy();
   }
+  function show(id,push){
+    if(tabs.indexOf(id)<0) id='privacy';
+    document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.toggle('active',p.id===id)});
+    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===id)});
+    build(id);
+    if(push){ history.replaceState(null,'','#'+id); window.scrollTo({top:0}); }
+  }
+  function spy(){
+    var links=[].slice.call(toc.querySelectorAll('a'));
+    var y=window.scrollY+190, cur=null;
+    links.forEach(function(a){var el=document.querySelector(a.getAttribute('href')); if(el&&el.offsetTop<=y) cur=a;});
+    links.forEach(function(a){a.classList.toggle('on',a===cur)});
+  }
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.tab,true)})});
+  window.addEventListener('scroll',spy,{passive:true});
+  function route(){
+    var h=(location.hash||'').replace('#','');
+    var m=h.match(/^(privacy|cookies|terms)(-\d+)?$/);
+    show(m?m[1]:'privacy',false);
+    if(m&&m[2]){var el=document.getElementById(h); if(el) setTimeout(function(){el.scrollIntoView()},50);}
+  }
+  window.addEventListener('hashchange',route); route();
+})();
 </script>
 </body>
 </html>
