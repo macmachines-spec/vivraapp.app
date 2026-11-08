@@ -8,16 +8,17 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <style>
   :root {
-    --bg: #0A0A15;
+    --bg: #FFFBF2;
     --violet: #7C3AED;
     --cyan: #0EA5E9;
-    --white70: rgba(255,255,255,0.7);
+    --ink: #1A1030;
+    --ink70: #4B4463;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     background: var(--bg);
-    color: #fff;
-    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    font-family: 'DM Sans', 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -26,19 +27,20 @@
     padding: 24px;
   }
   .logo-icon {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto 20px;
     background: linear-gradient(135deg, var(--violet), var(--cyan));
-    border-radius: 16px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
+    color: #fff;
   }
-  p { color: var(--white70); font-size: 15px; margin-top: 8px; }
-  a { color: var(--cyan); }
+  p { color: var(--ink70); font-size: 16px; margin-top: 8px; }
+  a { color: var(--violet); font-weight: 700; }
 </style>
 </head>
 <body>
