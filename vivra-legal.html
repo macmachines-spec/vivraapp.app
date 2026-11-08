@@ -536,6 +536,17 @@ footer a{color:var(--sun);text-decoration:none}
       </div>
     </div>
 
+    <div class="section" id="delete-account">
+      <h2 class="section-title">Delete Your Account</h2>
+      <p>You can delete your account at any time from inside the app:</p>
+      <ol>
+        <li>Open Vivra and go to the <strong>Profile</strong> tab</li>
+        <li>Tap <strong>Delete account</strong> and follow the steps</li>
+      </ol>
+      <p>This removes your Meet page, posts, comments, followers and discovery profile for good. Your chats stay for the other person and show as "Deleted account".</p>
+      <p>If you cannot open the app, or you also want the messages and files you sent erased, write to <a href="mailto:support@vivraapp.app">support@vivraapp.app</a> from the email linked to your account, or tell us your Vivra code. We will respond within 30 days.</p>
+    </div>
+
     <div class="section">
       <h2 class="section-title">Data Retention</h2>
       <p>We retain your personal data only as long as necessary to provide our services.</p>
@@ -881,8 +892,10 @@ footer a{color:var(--sun);text-decoration:none}
   function route(){
     var h=(location.hash||'').replace('#','');
     var m=h.match(/^(privacy|cookies|terms)(-\d+)?$/);
-    show(m?m[1]:'privacy',false);
-    if(m&&m[2]){var el=document.getElementById(h); if(el) setTimeout(function(){el.scrollIntoView()},50);}
+    var el=h?document.getElementById(h):null;
+    var panel=el&&el.closest?el.closest('.tab-panel'):null;
+    show(m?m[1]:(panel?panel.id:'privacy'),false);
+    if(el&&!/^(privacy|cookies|terms)$/.test(h)) setTimeout(function(){el.scrollIntoView()},50);
   }
   window.addEventListener('hashchange',route); route();
 })();
